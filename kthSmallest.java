@@ -27,17 +27,12 @@ public class kthSmallest {
     //   return;
     // }
 
-    // int[] MS = {5, 3, 1, 9, 8, 2, 4, 7, 11};                                             // test arrays
-    // int[] HP = {5, 3, 1, 9, 8, 2, 4, 7, 11};
-
     int[] MS = new int[n];
     int[] HP = new int[n];
 
     int rndm;
     for (int i=0; i < n; i++) {
       rndm = (int)(Math.random() * 1000000);                                                // identical arrays of random integers
-      // MS[i] = i;
-      // HP[i] = i;                                                                         // for testing
       MS[i] = rndm;
       HP[i] = rndm;
 
@@ -45,11 +40,6 @@ public class kthSmallest {
 
     MergeSort(MS);
     System.out.println("MergeSort:");
-    // System.out.print("[ ");
-    // for (int i=0; i < MS.length; i++) {
-    //   System.out.print(MS[i]+ " ");
-    // }
-    // System.out.println("]");
     System.out.println("    n = " +n);
     System.out.println("    k = " +k);
     System.out.println("    A[kPos] = " +MS[k-1]);                                          // k-1, because start at 0
@@ -58,11 +48,6 @@ public class kthSmallest {
 
     int kPrint = QuickSelect(HP, 0, n-1, k);                                                // n-1, because r is rightmost
     System.out.println("HoarePartition:");
-    // System.out.print("[ ");
-    // for (int i=0; i < HP.length; i++) {
-    //   System.out.print(HP[i]+ " ");
-    // }
-    // System.out.println("]");
     System.out.println("    n = " +n);
     System.out.println("    k = " +k);
     System.out.println("    A[kPos] = " +kPrint);                                           // kPrint should equal A[k-1]
